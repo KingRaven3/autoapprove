@@ -13,9 +13,11 @@ bot = Client(
 def auto(_,m:ChatJoinRequest):
     chat_id = m.chat.id
     user_id = m.from_user.id
+    channel_name = m.chat.title
     time.sleep(3)
     bot.approve_chat_join_request(chat_id , user_id)
     print(f"APPROVED {user_id} in {chat_id}")
+    bot.send_message(user_id , f"Your request has been approved on the chanel: {channel_name} ")
 
 
 bot.run()
