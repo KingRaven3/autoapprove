@@ -20,4 +20,9 @@ def auto(_,m:ChatJoinRequest):
     bot.send_message(user_id , f"Your request has been approved on the chanel: {channel_name} ")
 
 
+@bot.on_message(filters.command("start"))
+def start(_,m):
+    m.reply("Hello")
+
+
 bot.run()
